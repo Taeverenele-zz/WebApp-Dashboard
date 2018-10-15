@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div id="app-name">
+                    <strong>Nele</strong>'s App
+                </div>
+                <div class="header-info">
+                    <a class="bell" href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <path d="M24 18v-8c0-5.5-4.5-10-10-10S4 4.5 4 10v8l-4 8h9.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H28l-4-8zM14 28c-1.3 0-2.4-.8-2.8-2h5.6c-.4 1.2-1.5 2-2.8 2zM3 24l3-6v-8c0-4.4 3.6-8 8-8s8 3.6 8 8v8l3 6H3z" fill="#fff"/>
+                        </svg>
+                        <span class="dot"></span>
+                    </a>
+                    <img class="avatar" src="images/me.jpg" 
+                    alt="Photo of Nele" 
+                    height= "40px"
+                    width= "40px" />
+                    <p>Nele Taevere</p>
+                </div>
+            </header>
+            <nav>
+                <a class="icon" href="">
+                    <img src="icons/icon-dashboard.svg" 
+                    alt="Dashboard icon" 
+                    height="30px"
+                    width="30px" />
+                </a>
+                <a class="icon" href="">
+                    <img src="icons/icon-members.svg" 
+                    alt="Memebrs icon" 
+                    height="30px"
+                    width="30px" />
+                </a>
+                <a class="icon" href="">
+                    <img src="icons/icon-visits.svg" 
+                    alt="Visits icon" 
+                    height="30px"
+                    width="30px" />
+                </a>
+                <a class="icon" href="">
+                    <img src="icons/icon-settings.svg" 
+                    alt="Setting icon" 
+                    height="30px"
+                    width="30px" />
+                </a>                
+            </nav>
+            <main>
+                <div class="bookmark">
+                    <h2>Dashboard</h2>
+                    <div class="search-box">
+                        <input type="text" id="search-text-input" name="search" placeholder="Search">
+                        <div id="button-holder">
+                            <img src="icons/magglass.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div id="flashMessage">
+                    <div class="alert-wrapper"><strong>Alert</strong> &nbsp; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</div>
+                    <button class="close">x</button>
+                </div>
+                <div class="line-chart-labels-outer">
+                    <div class="line-chart-title">
+                        <h3>Traffic</h3>
+                    </div>
+                    <div class="line-chart-labels">
+                        <label><a href="">Hourly</a></label>
+                        <label><a href="">Daily</a></label>
+                        <label><a href="">Weekly</a></label>
+                        <label><a href="">Monthly</a></label>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="line-chart">
+                        <canvas id="myChart"></canvas>  
+                    </div>
+                    <div class="bar-chart"> 
+                        <h3>Daily traffic</h3>
+                        <canvas id="myBarChart"></canvas>
+                    </div>
+                    <div class="doughnut-chart">
+                        <h3>Mobile users</h3>
+                        <canvas id="myDoughnutChart"></canvas>
+                    </div>
+                </div>
+                <h3 class="social-stats-header">Social stats</h3>
+                <div class="social-stats-grid">
+                    <div class="social-card">
+                        <div class="svg-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                                <path class="social-logo" d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/>
+                            </svg>
+                        </div>
+                        <div class="stats-container">
+                            <h4>Twitter</h4>
+                            <p>10,345</p>
+                        </div>
+                    </div>
+                    <div class="social-card">
+                        <div class="svg-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                                <path class="social-logo" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3 8h-1.35c-.538 0-.65.221-.65.778V10h2l-.209 2H13v7h-3v-7H8v-2h2V7.692C10 5.923 10.931 5 13.029 5H15v3z"/>
+                            </svg>
+                        </div>
+                        <div class="stats-container">
+                            <h4>Facebook</h4>
+                            <p>8,739</p>
+                        </div>
+                    </div>
+                    <div class="social-card">
+                        <div class="svg-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                                <path class="social-logo" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zM9.083 16.083C6.825 16.083 5 14.258 5 12s1.825-4.083 4.083-4.083a3.91 3.91 0 0 1 2.735 1.067l-1.107 1.068c-.304-.292-.834-.63-1.628-.63-1.394 0-2.531 1.155-2.531 2.579 0 1.424 1.138 2.579 2.531 2.579 1.616 0 2.224-1.162 2.316-1.762H9.083v-1.4h3.855c.036.204.064.408.064.677.001 2.332-1.563 3.988-3.919 3.988zm9.917-3.5h-1.75v1.75h-1.167v-1.75h-1.75v-1.166h1.75v-1.75h1.167v1.75H19v1.166z"/>
+                            </svg>
+                        </div>
+                        <div class="stats-container">
+                            <h4>Google+</h4>
+                            <p>2,530</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="members-area">
+                    <div class="members-widget">
+                        <h3>New Members</h3>
+                        <div class="widget-row">
+                                <img src="images/member-1.jpg" 
+                                class="member-avatar" 
+                                alt="Photo of a member"
+                                height= "40px"
+                                width= "40px">
+                            <div class="member-details">
+                                <p>Victoria Chambers</p><br>
+                                <span><a href="mailto:victoria.chambers80@example.com" target="_blank">victoria.chambers80@example.com</a></span>
+                            </div>
+                                <p class="member-join-date">10/15/15</p>
+                        </div>
+                        <div class="widget-row">
+                                <img src="images/member-2.jpg" 
+                                class="member-avatar" 
+                                alt="Photo of a member"
+                                height= "40px"
+                                width= "40px">
+                            <div class="member-details">
+                                <p>Dale Byrd</p><br>
+                                <span><a href="mailto:dale.byrd52@example.com" target="_blank">dale.byrd52@example.com</a></span>
+                            </div>
+                                <p class="member-join-date">10/15/15</p>
+                        </div>
+                        <div class="widget-row">
+                                <img src="images/member-3.jpg" 
+                                class="member-avatar" 
+                                alt="Photo of a member"
+                                height= "40px"
+                                width= "40px">
+                            <div class="member-details">
+                                <p>Dawn Wood</p><br>
+                                <span><a href="mailto:dawn.wood16@example.com" target="_blank">dawn.wood16@example.com</a></span>
+                            </div>
+                                <p class="member-join-date">10/15/15</p>
+                        </div>
+                        <div class="widget-row">
+                                <img src="images/member-4.jpg" 
+                                class="member-avatar" 
+                                alt="Photo of a member"
+                                height= "40px"
+                                width= "40px">
+                            <div class="member-details">
+                                <p>Dan Oliver</p><br>
+                                <span><a href="mailto:dan.oliver82@example.com" target="_blank">dan.oliver82@example.com</a></span>
+                            </div>
+                                <p class="member-join-date">10/15/15</p>
+                        </div>
+                    </div>
+
+                    <div class="members-widget">
+                        <h3>Recent activity</h3>
+                        <div class="widget-row">
+                            <img src="images/member-1.jpg" 
+                                class="member-avatar" 
+                                alt="Photo of a member"
+                                height= "40px"
+                                width= "40px">
+                            <p>Victoria Chambers commented on Nele's App SEO Tips<br>
+                                4 hours ago</p>
+                            <a class="arrow right" href=""></a>
+                        </div>
+                        <div class="widget-row">
+                            <img src="images/member-2.jpg" 
+                                class="member-avatar" 
+                                alt="Photo of a member"
+                                height= "40px"
+                                width= "40px">
+                            <p>Dale Byrd like the post Facebook's Changes for 2016<br>
+                                5 hours ago</p>
+                            <a class="arrow right" href=""></a>
+                        </div>
+                        <div class="widget-row">
+                            <img src="images/member-3.jpg" 
+                                class="member-avatar" 
+                                alt="Photo of a member"
+                                height= "40px"
+                                width= "40px">
+                            <p>Dawn Wood commented on Facebook's Changes for 2016<br>
+                                5 hours ago</p>
+                            <a class="arrow right" href=""></a>
+                        </div>
+                        <div class="widget-row">
+                            <img src="images/member-4.jpg" 
+                                class="member-avatar" 
+                                alt="Photo of a member"
+                                height= "40px"
+                                width= "40px">
+                            <p>Dan Oliver posted Nele's App SEO Tips<br>
+                                1 day ago</p>
+                            <a class="arrow right" href=""></a>
+                        </div>
+                    </div>
+                    <div class="members-widget">
+                        <h3>Message User</h3>
+                        <form>
+                            <input type="text" id="user-search" name="user-search" placeholder="Search for User">
+                            <textarea id="message-user" name="message-user" placeholder="Message for User"></textarea>
+                            <button class="btn" type="submit">SEND</button>
+                        </form>
+                    </div>
+                    <div class="members-widget">
+                            <h3>Settings</h3>
+                            <div class="onoffswitch-wrapper">
+                                <p>Send Email notifications</p>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="onoffswitch-wrapper">
+                                <p>Set Profile to Public</p>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <select id="timezone" name="user-timezone">
+                                <option value="">Select Timezone</option>
+                                <option value="UTC−11:00 — Niue">UTC−11:00 — Niue</option>
+                                <option value="UTC−10:00 — Cook Islands">UTC−10:00 — Cook Islands</option>
+                                <option value="UTC+12:00 — main territory of New Zealand">UTC+12:00 — main territory of New Zealand</option>
+                                <option value="UTC+12:45 — Chatham Islands">UTC+12:45 — Chatham Islands</option>
+                                <option value="UTC+13:00 — Tokelau">UTC+13:00 — Tokelau</option>
+                            </select>
+                            <div class="button-wrapper">
+                                <button class="btn" type="submit">SAVE</button>
+                                <button class="btn" type="submit">CANCEL</button>
+                            </div>
+                        </div>
+                </div>    
+            </main>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+        <script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/charts.js" type="text/javascript" charset="utf-8"></script>
+    </body>
+</html>
