@@ -166,6 +166,9 @@ h3 {
   text-align: center;
   margin-top: 0;
 }
+.line-chart {
+  height: 230px;
+}
 .line-chart-labels-outer {
   padding: 20px 0;
 }
@@ -173,11 +176,12 @@ h3 {
   margin-top: 20px;
   text-align: center;
 }
-.line-chart-labels a {
+.line-chart-labels label {
   text-decoration: none;
   padding: 5px 10px;
+  cursor: pointer;
 }
-.line-chart-labels a:hover {
+.line-chart-labels label:hover {
   color: #fff;
   background-color:	#7DCA91;
   border-radius: 15px;
@@ -189,9 +193,8 @@ flex-wrap: wrap;
 .line-chart,
 .bar-chart,
 .doughnut-chart {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  text-align: center;
   padding-bottom: 20px;
 }
 .social-stats-grid {
@@ -289,6 +292,17 @@ flex-wrap: wrap;
   width: 90%;
   margin: 0 auto;
 }
+form p {
+  margin-bottom: 0;
+  font-size: 15px;
+  color: red;
+}
+#no-user-error {
+  display: none;
+}
+#no-message-error {
+  display: none;
+}
 form #user-search,
 form #message-user {
   border: solid 1px grey;
@@ -301,10 +315,13 @@ form button,
   height: 40px;
   outline: none;
 }
+form #user-search {
+  margin-bottom: 20px;
+}
 form #message-user {
   border: solid 1px grey;
   border-radius: 5px;
-  margin: 20px 0;
+  margin-bottom: 20px;
   min-height: 150px;
 }
 form button,
@@ -448,6 +465,8 @@ input:checked + .slider:before {
     flex-basis: 40%;
     margin-top: 20px;
     margin-right: 20px;
+  }.line-chart {
+    height: 280px;
   }
   .line-chart-labels-outer {
     display: flex;
@@ -464,7 +483,7 @@ input:checked + .slider:before {
   }
  .bar-chart,
  .doughnut-chart {
-    flex: 0 0 40%;
+    flex: 0 0 48%;
   }
   .social-card {
     text-align: left;

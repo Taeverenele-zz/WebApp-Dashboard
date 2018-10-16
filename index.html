@@ -71,10 +71,10 @@
                         <h3>Traffic</h3>
                     </div>
                     <div class="line-chart-labels">
-                        <label><a href="">Hourly</a></label>
-                        <label><a href="">Daily</a></label>
-                        <label><a href="">Weekly</a></label>
-                        <label><a href="">Monthly</a></label>
+                        <label class="chart-labels" name="hourly">Hourly</label>
+                        <label class="chart-labels" name="daily">Daily</label>
+                        <label class="chart-labels" name="weekly">Weekly</label>
+                        <label class="chart-labels" name="monthly">Monthly</label>
                     </div>
                 </div>
                 <div class="chart-container">
@@ -225,9 +225,11 @@
                     <div class="members-widget">
                         <h3>Message User</h3>
                         <form>
+                            <p id="no-user-error">*Please select a user</p>
                             <input type="text" id="user-search" name="user-search" placeholder="Search for User">
+                            <p id="no-message-error">*Please write a message</p>
                             <textarea id="message-user" name="message-user" placeholder="Message for User"></textarea>
-                            <button class="btn" type="submit">SEND</button>
+                            <button class="btn" id="submit-button" type="submit">SEND</button>
                         </form>
                     </div>
                     <div class="members-widget">
