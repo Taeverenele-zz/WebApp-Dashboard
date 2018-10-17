@@ -43,6 +43,8 @@ nav {
   flex: 1;
   align-items: center;
 }
+/*BELL & DROPDOWN MENU*/
+/***********************************************************************/
 @keyframes ring {
   0% { transform: rotate(0); }
   1% { transform: rotate(30deg); }
@@ -69,15 +71,11 @@ nav {
   43% { transform: rotate(0); }
   100% { transform: rotate(0); }
 }
-.bell {
-  height: 20px;
-  width: 20px;
-  margin-right: 40px;
+#ringing-bell {
   animation: ring 4s .7s ease-in-out infinite;
   transform-origin: 50% 4px;
-  position: relative;
 }
-.dot {
+.dropbtn .dot {
   height: 9px;
   width: 9px;
   background-color: #7DCA91;
@@ -87,6 +85,55 @@ nav {
   top: 0;
   right: 0;
 }
+.dropbtn {
+  cursor: pointer;
+}
+.bell {
+  height: 25px;
+  width: 25px;
+  margin-right: 40px;
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f1f1f1;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content .dot {
+  height: 9px;
+  width: 9px;
+  background-color: #7DCA91;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: inline-block;
+}
+.dropdown-content .dropdown-row {
+  color: black;
+  padding: 12px 0 12px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  display: flex;
+}
+.dropdown-content .dropdown-row:hover {
+  background-color: #ddd;
+}
+.dropdown-wrapper {
+  width: 90%;
+}
+.close-notification {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.show {
+  display:block;
+}
+/***********************************************************************/
 .avatar {
   margin-right: 10px;
 }
@@ -159,6 +206,7 @@ main {
   font-weight: 500;
   font-size: 1.5em;
   border: none;
+  outline: 0;
 }
 /***** LINE CHART *****/
 h3 {
@@ -294,6 +342,7 @@ flex-wrap: wrap;
 }
 form p {
   margin-bottom: 0;
+  margin-top: 0;
   font-size: 15px;
   color: red;
 }
@@ -308,6 +357,7 @@ form #message-user {
   border: solid 1px grey;
   border-radius: 5px;
   padding: 10px;
+  outline: none;
 }
 form #user-search,
 form button,
@@ -315,14 +365,14 @@ form button,
   height: 40px;
   outline: none;
 }
-form #user-search {
-  margin-bottom: 20px;
-}
 form #message-user {
   border: solid 1px grey;
   border-radius: 5px;
-  margin-bottom: 20px;
-  min-height: 150px;
+  min-height: 120px;
+  margin-bottom: 30px;
+}
+form .error-message {
+  height: 20px;
 }
 form button,
 .button-wrapper button:first-child {
@@ -537,6 +587,7 @@ input:checked + .slider:before {
     border-bottom: 0;
   }
 }
+
 
 
 

@@ -13,12 +13,37 @@
                     <strong>Nele</strong>'s App
                 </div>
                 <div class="header-info">
-                    <a class="bell" href="">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                        <path d="M24 18v-8c0-5.5-4.5-10-10-10S4 4.5 4 10v8l-4 8h9.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H28l-4-8zM14 28c-1.3 0-2.4-.8-2.8-2h5.6c-.4 1.2-1.5 2-2.8 2zM3 24l3-6v-8c0-4.4 3.6-8 8-8s8 3.6 8 8v8l3 6H3z" fill="#fff"/>
-                        </svg>
-                        <span class="dot"></span>
-                    </a>
+                    <div class="bell">
+                        <span onclick="myFunction()" class="dropbtn">
+                            <svg id ="ringing-bell" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                            <path d="M24 18v-8c0-5.5-4.5-10-10-10S4 4.5 4 10v8l-4 8h9.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H28l-4-8zM14 28c-1.3 0-2.4-.8-2.8-2h5.6c-.4 1.2-1.5 2-2.8 2zM3 24l3-6v-8c0-4.4 3.6-8 8-8s8 3.6 8 8v8l3 6H3z" fill="#fff"/>
+                            </svg>
+                            <span id="remove-dot" class="dot"></span>
+                        </span>
+                        <div id="myDropdown" class="dropdown-content">
+                            <div class="dropdown-row">
+                                <div class="dropdown-wrapper">
+                                    <span class="dot"></span>
+                                    You have 6 unread messages
+                                </div>
+                                <button class="close-notification">x</button>
+                            </div>
+                            <div class="dropdown-row">
+                                <div class="dropdown-wrapper">
+                                    <span class="dot"></span>
+                                    You have 3 new followers
+                                </div>
+                                <button class="close-notification">x</button>
+                            </div>
+                            <div class="dropdown-row">
+                                <div class="dropdown-wrapper">
+                                    <span class="dot"></span>
+                                    Your password expires in 4 days
+                                </div>
+                                <button class="close-notification">x</button>
+                            </div>
+                        </div>
+                    </div>
                     <img class="avatar" src="images/me.jpg" 
                     alt="Photo of Nele" 
                     height= "40px"
@@ -225,9 +250,13 @@
                     <div class="members-widget">
                         <h3>Message User</h3>
                         <form>
-                            <p id="no-user-error">*Please select a user</p>
+                            <div class="error-message">
+                                <p id="no-user-error">*Please select a user</p>
+                            </div>
                             <input type="text" id="user-search" name="user-search" placeholder="Search for User">
-                            <p id="no-message-error">*Please write a message</p>
+                            <div class="error-message">
+                                <p id="no-message-error">*Please write a message</p>
+                            </div>
                             <textarea id="message-user" name="message-user" placeholder="Message for User"></textarea>
                             <button class="btn" id="submit-button" type="submit">SEND</button>
                         </form>
@@ -237,14 +266,14 @@
                             <div class="onoffswitch-wrapper">
                                 <p>Send Email notifications</p>
                                 <label class="switch">
-                                    <input type="checkbox">
+                                    <input type="checkbox" id="emailSettings">
                                     <span class="slider round"></span>
                                 </label>
                             </div>
                             <div class="onoffswitch-wrapper">
                                 <p>Set Profile to Public</p>
                                 <label class="switch">
-                                    <input type="checkbox">
+                                    <input type="checkbox" id="profileSettings">
                                     <span class="slider round"></span>
                                 </label>
                             </div>
