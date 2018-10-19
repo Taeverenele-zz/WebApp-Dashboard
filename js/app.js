@@ -1,36 +1,35 @@
 
 // BELL DROPDOWN 
-function myFunction() {
-    const x = document.getElementById("myDropdown");
-    x.classList.add('show')
-    window.addEventListener('mouseup', function(){
-        x.classList.remove('show');
-    })
-};
 document.getElementById('ringing-bell').addEventListener('click', function(e) {
     document.getElementById('remove-dot').style.display = "none";
     e.target.style.animation = "none";
-})
+    function myFunction() {
+        const x = document.getElementById("myDropdown");
+        x.classList.add('show')
+        window.addEventListener('mouseup', function(){
+            x.classList.remove('show');
+        })
+    } myFunction();
+});
 
 // FASHMESSAGE 
 $('#flashMessage').hide();
 $('#flashMessage').fadeIn(1000);
 
-document.querySelector('.close').addEventListener('click', function() {
+document.getElementById('close').addEventListener('click', function() {
     document.getElementById('flashMessage').style.display = 'none';
 });
 
-// SUBMIT-BUTTON
 
+// SUBMIT-BUTTON
+const userSearch = document.getElementById('user-search');
+const userMessage = document.getElementById('message-user');
+const noUserError = document.getElementById('no-user-error');
+const noMessageError = document.getElementById('no-message-error');
 const validation = () => {
-    const userSearch = document.getElementById('user-search');
-    const userMessage = document.getElementById('message-user');
-    const noUserError = document.getElementById('no-user-error');
-    const noMessageError = document.getElementById('no-message-error');
     if(userSearch.value === '') {
         noUserError.style.display = 'block';
         userSearch.style.border = 'solid 1px #ff0000';
-        console.log()
         return false;
     } if(userMessage.value === '') {
         noMessageError.style.display = 'block';
@@ -39,16 +38,21 @@ const validation = () => {
     } else {
         return true;
     }
-}
+};
+userSearch.addEventListener('keyup', function() {
+    noUserError.style.display = 'none';
+    userSearch.style.border = 'solid 1px black';
+});
+userMessage.addEventListener('keyup', function() {
+    noMessageError.style.display = 'none';
+    userMessage.style.border = 'solid 1px black';
+});
 
 const submitButton = document.getElementById('submit-button');
  
-
 submitButton.addEventListener('click', function(e) {
     e.preventDefault();
     validation();
-
-    //if both name and message ok, change button layout
     if (validation() === true) {
         submitButton.innerHTML = 'SENDING...';
         setTimeout(() => {
@@ -64,29 +68,30 @@ submitButton.addEventListener('click', function(e) {
     }
 });
 
-///
+
+// LOCAL STORAGE
 
 let checked = false;
-
 const emailSettingsToggle = document.getElementById('emailSettings');
+const profileSettingsToggle = document.getElementById('profileSettings');
+const timezoneSettingsToggle = document.getElementById('timezone');
+
 
 emailSettingsToggle.addEventListener('change', (e) => {
     localStorage.setItem("emailSettingsChecked", e.target.checked);
-})
+});
 
-const xyz = localStorage.getItem('emailSettingsChecked');
-console.log(xyz);
-if (xyz === 'true') {
-    console.log(xyz);
-
-    checked = xyz;
-    // add class to emailSetting
+const emailsChecked = localStorage.getItem('emailSettingsChecked');
+if (emailsChecked === 'true') {
+    checked = emailsChecked;
     emailSettingsToggle.checked = true
-}
+};
+profileSettingsToggle.addEventListener('change', (e) => {
+    localStorage.setItem("profileSettingsChecked", e.target.checked);
+});
 
-
-// localStorage.getItem('color');
-// localStorage.removeItem('color');
-// localStorage.color = 'green';
-// localStorage.color
-// delete localStorage.color
+const profileChecked = localStorage.getItem('profileSettingsChecked');
+if (profileChecked === 'true') {
+    checked = profileChecked;
+    profileSettingsToggle.checked = true
+};

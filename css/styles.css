@@ -1,5 +1,5 @@
 
-.container {
+#container {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
@@ -37,7 +37,7 @@ nav {
   margin: auto;
   margin-left: 20px;
 }
-.header-info {
+#header-info {
   display: flex;
   justify-content: flex-end;
   flex: 1;
@@ -137,7 +137,7 @@ nav {
 .avatar {
   margin-right: 10px;
 }
-.header-info p {
+#header-info p {
   color: #fff;
   margin-right: 30px;
 }
@@ -146,7 +146,6 @@ main {
   background-color: rgb(255, 255, 255);
   padding-bottom: 100px;
 }
-
 .bookmark {
   display: flex;
   flex-wrap: wrap;
@@ -161,12 +160,22 @@ main {
   height: 40px;
   flex: 0 0 90%;
   margin-bottom: 20px;
+  display: flex;
+}
+.search-icon {
+  width: 10%;
+  background-image: url("../icons/magglass.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 25px;
+  cursor: pointer;
+  background-color: #fff;
 }
 #search-text-input{
   height: 37px;
   outline: 0;
   padding-left: 10px;
-  width: 80%; 
+  width: 90%; 
   border: none;
 }
 #button-holder{
@@ -196,7 +205,7 @@ main {
 #flashMessage .alert-wrapper {
   width: 90%;
 }
-.close {
+#close {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -229,7 +238,8 @@ h3 {
   padding: 5px 10px;
   cursor: pointer;
 }
-.line-chart-labels label:hover {
+.line-chart-labels label:hover,
+.line-chart-labels label:active {
   color: #fff;
   background-color:	#7DCA91;
   border-radius: 15px;
@@ -244,6 +254,14 @@ flex-wrap: wrap;
   width: 100%;
   margin: 0 auto;
   padding-bottom: 20px;
+  border-bottom: 1px solid grey;
+}
+.bar-chart h3,
+.doughnut-chart h3 {
+  margin-top: 20px;
+}
+.doughnut-chart {
+  border-bottom: 0;
 }
 .social-stats-grid {
   display: grid;
@@ -287,7 +305,7 @@ flex-wrap: wrap;
   margin-top: 20px;
 }
 .members-widget {
-  border: solid 1px grey;
+  border: solid 1px rgb(194, 191, 191);
   width: 550px;
   min-height: 360px;
   padding: 10px;
@@ -303,6 +321,8 @@ flex-wrap: wrap;
 .member-avatar {
   border-radius: 50%;
   margin: 10px;
+  height: 40px;
+  width: 40px;
 }
 .member-details {
   line-height: 10px;
@@ -352,6 +372,9 @@ form p {
 #no-message-error {
   display: none;
 }
+form #user-search {
+  width: 100%;
+}
 form #user-search,
 form #message-user {
   border: solid 1px grey;
@@ -380,6 +403,7 @@ form button,
   background-color: rgb(17, 134, 243);
   border-radius: 5px;
 }
+
 /***** SETTINGS *****/
 
 /* The switch - the box around the slider */
@@ -454,6 +478,7 @@ input:checked + .slider:before {
 #timezone {
   height: 40px;
   width: 90%;
+  outline: none;
 }
 .onoffswitch-wrapper {
   display: flex;
@@ -483,7 +508,7 @@ input:checked + .slider:before {
 /***** MEDIA QUERIES *****/
 
 @media (min-width: 768px) {
-  .container {
+  #container {
   grid-template-columns: 100px 1fr;
   grid-auto-rows: 75px 1fr;
   grid-template-areas: 
@@ -500,22 +525,34 @@ input:checked + .slider:before {
   }
   .icon:hover {
     border-left: solid 5px #7DCA91;
-    border-radius: 5px;
-  }
-  .bookmark {
-    justify-content: space-between;
   }
   .bookmark h2 {
     margin-left: 20px;
+  }
+  .bookmark {
+    position: relative;
+    height: 70px;
+    background-color: rgb(236, 234, 234);
+  }
+  .dashboard-tab {
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    width: 150px;
+    height: 71px;
+  }
+  .bookmark {
+    justify-content: flex-end;
   }
   h3 {
     text-align: left;
   }
   .search-box {
     flex-basis: 40%;
-    margin-top: 20px;
+    margin-top: 15px;
     margin-right: 20px;
-  }.line-chart {
+  }
+  .line-chart {
     height: 280px;
   }
   .line-chart-labels-outer {
@@ -530,10 +567,6 @@ input:checked + .slider:before {
   .line-chart-labels-outer h3 {
     margin-top: 20px;
     margin-left: 20px;
-  }
- .bar-chart,
- .doughnut-chart {
-    flex: 0 0 48%;
   }
   .social-card {
     text-align: left;
@@ -553,6 +586,7 @@ input:checked + .slider:before {
 
 }
 @media (min-width: 1024px) {
+
   .social-stats-grid {
     grid-gap: 100px;
   }
@@ -560,6 +594,20 @@ input:checked + .slider:before {
   .doughnut-chart h3 {
     margin-left: 0;
   }
+  .bar-chart,
+  .doughnut-chart {
+     flex: 0 0 48%;
+   }
+  .bar-chart {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+ .doughnut-chart {
+   border-left: 1px solid grey;
+   padding-left: 10px;
+   padding-bottom: 0;
+ }
+ 
   .svg-container svg {
     height: 70px;
     width: 70px;

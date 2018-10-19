@@ -1,21 +1,17 @@
-// LINE CHART
 
 Chart.defaults.global.responsive = true;
 Chart.defaults.global.maintainAspectRatio = false;
 
+// LINE CHART //
 var datasets = {
     hourlyDataset: [500, 1000, 700, 1500, 2000, 1500, 1700, 1000, 1200, 2000, 1700, 2100],
     dailyDataset: [100, 100, 700, 500, 1200, 1500, 2000, 1700, 1500, 2000, 1700, 1000],
     weeklyDataset: [700, 2000, 700, 1500, 2000, 1000, 1700, 1500, 700, 1000, 500, 100],
     monthlyDataset: [2000, 1700, 1500, 1000, 1500, 1200, 2100, 1000, 300, 100, 1000, 2100]
 }
-// var hourlyDataset = [500, 1000, 700, 1500, 2000, 1500, 1700, 1000, 1200, 2000, 1700, 2100];
-// var dailyDataset = [100, 100, 700, 500, 1200, 1500, 2000, 1700, 1500, 2000, 1700, 1000];
-// var weeklyDataset = [700, 2000, 700, 1500, 2000, 1000, 1700, 1500, 700, 1000, 500, 100];
-// var monthlyDataset = [2000, 1700, 1500, 1000, 1500, 1200, 2100, 1000, 300, 100, 1000, 2100];
 
-var ctx = document.getElementById("myChart");
-var myChart = new Chart(ctx, {
+var ctx = document.getElementById("myLineChart");
+var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-7", "18-24", "25-31"],
@@ -42,19 +38,20 @@ var myChart = new Chart(ctx, {
   }
 });
 
-const abc = (chart, dataset) => {
-    chart.config.data.datasets[0].data = dataset;
-    chart.update();
+// CHANGE LINE-CHART DATA
+const updateChartData = (dataset) => {
+    myLineChart.config.data.datasets[0].data = dataset;
+    myLineChart.update();
 }
-
 
 const chartLabels = document.getElementsByClassName('chart-labels');
 for(var i = 0; i < chartLabels.length; i += 1) {
     chartLabels[i].addEventListener('click', function(e) {
-        abc(myChart, datasets[e.target.attributes.name.value + 'Dataset']);
+        updateChartData(datasets[e.target.attributes.name.value + 'Dataset']);
     });
 }
 
+//BAR CHART
 var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
   type: 'bar',
@@ -90,37 +87,8 @@ var myBarChart = new Chart(ctx, {
     }
   }
 });
-// BAR CHART
-// var cty = document.getElementById("myBarChart");
-// var myBarChart = new Chart(cty, {
-//     type: 'bar',
-//     data: {
-//         labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-//         datasets: [{
-//             data: [75, 100, 175, 125, 225, 200, 100],
-//             backgroundColor: 'rgba(17, 134, 243, 1)'
-//         }]
-//     },
-//     options: {
-//         responsive: true,
-//         legend: {
-//             display: false
-//         },
-//         scales: {
-//             yAxes: [{
-//                 ticks: {
-//                     beginAtZero:true
-//                 }
-//             }]
-//         },
-//         scales: {
-//             xAxes: [{
-//                 barPercentage: 0.5
-//             }]
-//         }
-//     }
-// });
 
+// DOUGHNUT CHART
 var ctx = document.getElementById("myDoughnutChart");
 var myDoughnutChart = new Chart(ctx, {
   type: 'doughnut',
@@ -149,37 +117,3 @@ var myDoughnutChart = new Chart(ctx, {
     }
   }
 });
-
-
-// // DOUGHNUT CHART
-// var ctl = document.getElementById("myDoughnutChart");
-// var myDoughnutChart = new Chart(ctl, {
-//     type: 'doughnut',
-//     data: {
-//         labels: ['Phones', 'Tablets', 'Desktop'],
-//         datasets: [{
-//             data: [10, 20, 30],
-//             backgroundColor: ['rgba(17, 134, 243, 1)',
-//             'rgba(110, 181, 192, 1)',
-//             'rgba(110, 118, 169, 1)']
-//         }]
-//     },
-//     options: {
-//         responsive: true,
-//         legend: {
-//             display: true,
-//             position: 'right'
-//         },
-//         scales: {
-//             yAxes: [{
-//                 display: false,
-//                 gridLines: {
-//                     display:false
-//                 },
-//                 ticks: {
-//                     display:false                
-//                 }
-//             }]
-//         }
-//     }
-// });

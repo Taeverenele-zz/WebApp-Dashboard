@@ -4,17 +4,18 @@
         <meta charset="utf-8">
         <title>Dashboard</title>
         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/LeaVerou/awesomplete/gh-pages/awesomplete.css">
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <div class="container">
+        <div id="container">
             <header>
                 <div id="app-name">
                     <strong>Nele</strong>'s App
                 </div>
-                <div class="header-info">
+                <div id="header-info">
                     <div class="bell">
-                        <span onclick="myFunction()" class="dropbtn">
+                        <span class="dropbtn">
                             <svg id ="ringing-bell" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                             <path d="M24 18v-8c0-5.5-4.5-10-10-10S4 4.5 4 10v8l-4 8h9.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H28l-4-8zM14 28c-1.3 0-2.4-.8-2.8-2h5.6c-.4 1.2-1.5 2-2.8 2zM3 24l3-6v-8c0-4.4 3.6-8 8-8s8 3.6 8 8v8l3 6H3z" fill="#fff"/>
                             </svg>
@@ -51,6 +52,7 @@
                     <p>Nele Taevere</p>
                 </div>
             </header>
+
             <nav>
                 <a class="icon" href="">
                     <img src="icons/icon-dashboard.svg" 
@@ -79,17 +81,18 @@
             </nav>
             <main>
                 <div class="bookmark">
-                    <h2>Dashboard</h2>
+                        <div class="dashboard-tab">
+                                <h2>Dashboard</h2>
+                            </div>
                     <div class="search-box">
                         <input type="text" id="search-text-input" name="search" placeholder="Search">
-                        <div id="button-holder">
-                            <img src="icons/magglass.jpg" />
-                        </div>
+                        <div class="search-icon"></div>
                     </div>
                 </div>
+
                 <div id="flashMessage">
                     <div class="alert-wrapper"><strong>Alert</strong> &nbsp; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</div>
-                    <button class="close">x</button>
+                    <button id="close">x</button>
                 </div>
                 <div class="line-chart-labels-outer">
                     <div class="line-chart-title">
@@ -104,7 +107,7 @@
                 </div>
                 <div class="chart-container">
                     <div class="line-chart">
-                        <canvas id="myChart"></canvas>  
+                        <canvas id="myLineChart"></canvas>  
                     </div>
                     <div class="bar-chart"> 
                         <h3>Daily traffic</h3>
@@ -155,73 +158,49 @@
                     <div class="members-widget">
                         <h3>New Members</h3>
                         <div class="widget-row">
-                                <img src="images/member-1.jpg" 
-                                class="member-avatar" 
-                                alt="Photo of a member"
-                                height= "40px"
-                                width= "40px">
+                            <img src="images/member-1.jpg" class="member-avatar" alt="Photo of a member">
                             <div class="member-details">
                                 <p>Victoria Chambers</p><br>
                                 <span><a href="mailto:victoria.chambers80@example.com" target="_blank">victoria.chambers80@example.com</a></span>
                             </div>
-                                <p class="member-join-date">10/15/15</p>
+                            <p class="member-join-date">10/15/15</p>
                         </div>
                         <div class="widget-row">
-                                <img src="images/member-2.jpg" 
-                                class="member-avatar" 
-                                alt="Photo of a member"
-                                height= "40px"
-                                width= "40px">
+                            <img src="images/member-2.jpg" class="member-avatar" alt="Photo of a member">
                             <div class="member-details">
                                 <p>Dale Byrd</p><br>
                                 <span><a href="mailto:dale.byrd52@example.com" target="_blank">dale.byrd52@example.com</a></span>
                             </div>
-                                <p class="member-join-date">10/15/15</p>
+                            <p class="member-join-date">10/15/15</p>
                         </div>
                         <div class="widget-row">
-                                <img src="images/member-3.jpg" 
-                                class="member-avatar" 
-                                alt="Photo of a member"
-                                height= "40px"
-                                width= "40px">
+                            <img src="images/member-3.jpg" class="member-avatar" alt="Photo of a member">
                             <div class="member-details">
                                 <p>Dawn Wood</p><br>
                                 <span><a href="mailto:dawn.wood16@example.com" target="_blank">dawn.wood16@example.com</a></span>
                             </div>
-                                <p class="member-join-date">10/15/15</p>
+                            <p class="member-join-date">10/15/15</p>
                         </div>
                         <div class="widget-row">
-                                <img src="images/member-4.jpg" 
-                                class="member-avatar" 
-                                alt="Photo of a member"
-                                height= "40px"
-                                width= "40px">
+                            <img src="images/member-4.jpg" class="member-avatar" alt="Photo of a member">
                             <div class="member-details">
                                 <p>Dan Oliver</p><br>
                                 <span><a href="mailto:dan.oliver82@example.com" target="_blank">dan.oliver82@example.com</a></span>
                             </div>
-                                <p class="member-join-date">10/15/15</p>
+                            <p class="member-join-date">10/15/15</p>
                         </div>
                     </div>
 
                     <div class="members-widget">
                         <h3>Recent activity</h3>
                         <div class="widget-row">
-                            <img src="images/member-1.jpg" 
-                                class="member-avatar" 
-                                alt="Photo of a member"
-                                height= "40px"
-                                width= "40px">
+                            <img src="images/member-1.jpg" class="member-avatar" alt="Photo of a member">
                             <p>Victoria Chambers commented on Nele's App SEO Tips<br>
                                 4 hours ago</p>
                             <a class="arrow right" href=""></a>
                         </div>
                         <div class="widget-row">
-                            <img src="images/member-2.jpg" 
-                                class="member-avatar" 
-                                alt="Photo of a member"
-                                height= "40px"
-                                width= "40px">
+                            <img src="images/member-2.jpg" class="member-avatar" alt="Photo of a member">
                             <p>Dale Byrd like the post Facebook's Changes for 2016<br>
                                 5 hours ago</p>
                             <a class="arrow right" href=""></a>
@@ -229,9 +208,7 @@
                         <div class="widget-row">
                             <img src="images/member-3.jpg" 
                                 class="member-avatar" 
-                                alt="Photo of a member"
-                                height= "40px"
-                                width= "40px">
+                                alt="Photo of a member">
                             <p>Dawn Wood commented on Facebook's Changes for 2016<br>
                                 5 hours ago</p>
                             <a class="arrow right" href=""></a>
@@ -239,9 +216,7 @@
                         <div class="widget-row">
                             <img src="images/member-4.jpg" 
                                 class="member-avatar" 
-                                alt="Photo of a member"
-                                height= "40px"
-                                width= "40px">
+                                alt="Photo of a member">
                             <p>Dan Oliver posted Nele's App SEO Tips<br>
                                 1 day ago</p>
                             <a class="arrow right" href=""></a>
@@ -253,7 +228,10 @@
                             <div class="error-message">
                                 <p id="no-user-error">*Please select a user</p>
                             </div>
-                            <input type="text" id="user-search" name="user-search" placeholder="Search for User">
+                            <input type="text" class="awesomplete" id="user-search" name="user-search" placeholder="Search for User"
+                                data-minchars="1"
+                                data-maxitems="5"
+                                data-list="Victoria Chambers, Dale Byrd, Dawn Wood, Dan Oliver, Jonathan Button, Mary Jackson">
                             <div class="error-message">
                                 <p id="no-message-error">*Please write a message</p>
                             </div>
@@ -262,39 +240,40 @@
                         </form>
                     </div>
                     <div class="members-widget">
-                            <h3>Settings</h3>
-                            <div class="onoffswitch-wrapper">
-                                <p>Send Email notifications</p>
-                                <label class="switch">
-                                    <input type="checkbox" id="emailSettings">
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                            <div class="onoffswitch-wrapper">
-                                <p>Set Profile to Public</p>
-                                <label class="switch">
-                                    <input type="checkbox" id="profileSettings">
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                            <select id="timezone" name="user-timezone">
-                                <option value="">Select Timezone</option>
-                                <option value="UTC−11:00 — Niue">UTC−11:00 — Niue</option>
-                                <option value="UTC−10:00 — Cook Islands">UTC−10:00 — Cook Islands</option>
-                                <option value="UTC+12:00 — main territory of New Zealand">UTC+12:00 — main territory of New Zealand</option>
-                                <option value="UTC+12:45 — Chatham Islands">UTC+12:45 — Chatham Islands</option>
-                                <option value="UTC+13:00 — Tokelau">UTC+13:00 — Tokelau</option>
-                            </select>
-                            <div class="button-wrapper">
-                                <button class="btn" type="submit">SAVE</button>
-                                <button class="btn" type="submit">CANCEL</button>
-                            </div>
+                        <h3>Settings</h3>
+                        <div class="onoffswitch-wrapper">
+                            <p>Send Email notifications</p>
+                            <label class="switch">
+                                <input type="checkbox" id="emailSettings">
+                                <span class="slider round"></span>
+                            </label>
                         </div>
+                        <div class="onoffswitch-wrapper">
+                            <p>Set Profile to Public</p>
+                            <label class="switch">
+                                <input type="checkbox" id="profileSettings">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <select id="timezone" name="user-timezone">
+                            <option value="">Select Timezone</option>
+                            <option value="UTC−11:00 — Niue">UTC−11:00 — Niue</option>
+                            <option value="UTC−10:00 — Cook Islands">UTC−10:00 — Cook Islands</option>
+                            <option value="UTC+12:00 — main territory of New Zealand">UTC+12:00 — main territory of New Zealand</option>
+                            <option value="UTC+12:45 — Chatham Islands">UTC+12:45 — Chatham Islands</option>
+                            <option value="UTC+13:00 — Tokelau">UTC+13:00 — Tokelau</option>
+                        </select>
+                        <div class="button-wrapper">
+                            <button class="btn" type="submit">SAVE</button>
+                            <button class="btn" type="submit">CANCEL</button>
+                        </div>
+                    </div>
                 </div>    
             </main>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
         <script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://cdn.rawgit.com/LeaVerou/awesomplete/gh-pages/awesomplete.min.js"></script>
         <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/charts.js" type="text/javascript" charset="utf-8"></script>
     </body>
