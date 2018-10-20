@@ -1,31 +1,56 @@
 
 // BELL DROPDOWN 
-document.getElementById('ringing-bell').addEventListener('click', function(e) {
+const ringingBell = document.getElementById('ringing-bell');
+
+// REMOVE BELL'S DOT AND ANIMATION ONCE CLICKED
+ringingBell.addEventListener('click', (e) => {
     document.getElementById('remove-dot').style.display = "none";
     e.target.style.animation = "none";
-    function myFunction() {
-        const x = document.getElementById("myDropdown");
-        x.classList.add('show')
-        window.addEventListener('mouseup', function(){
-            x.classList.remove('show');
+// DISPLAY DROPDOWN BY ADDING CLASS
+    function showDropdown() {
+        const dropdown = document.getElementById("myDropdown");
+        dropdown.classList.add('show')
+// REMOVE DROPDOWN WHEN CLICKED ANYWHERE
+        window.addEventListener('mouseup', () => {
+            dropdown.classList.remove('show');
         })
-    } myFunction();
+    } showDropdown();
 });
 
 // FASHMESSAGE 
 $('#flashMessage').hide();
 $('#flashMessage').fadeIn(1000);
 
-document.getElementById('close').addEventListener('click', function() {
+document.getElementById('close').addEventListener('click', () => {
     document.getElementById('flashMessage').style.display = 'none';
 });
 
+// LINE CHART LABELS
+const labelsBackground = document.getElementsByClassName('chart-labels');
+const removeActiveClass = () => {
+    for (var i = 0; i < labelsBackground.length; i++) {
+        labelsBackground[i].classList.remove('active');
+    }
+};
+
+// REMOVE ALL 'ACTIVE' CLASS NAMES
+// ADD 'ACTIVE' CLASS NAME TO ELEMENT WHEN CLICKED
+for( var i = 0; i < labelsBackground.length; i++) {
+    labelsBackground[i].addEventListener('click', (e) => {
+        removeActiveClass();
+        e.target.classList.add('active');
+    })
+};
+
 
 // SUBMIT-BUTTON
+const submitButton = document.getElementById('submit-button');
 const userSearch = document.getElementById('user-search');
 const userMessage = document.getElementById('message-user');
 const noUserError = document.getElementById('no-user-error');
 const noMessageError = document.getElementById('no-message-error');
+
+// CHECK IF FORM FIELDS ARE EMPTY & DISPLAY ERROR MESSAGE
 const validation = () => {
     if(userSearch.value === '') {
         noUserError.style.display = 'block';
@@ -39,18 +64,17 @@ const validation = () => {
         return true;
     }
 };
-userSearch.addEventListener('keyup', function() {
+// REMOVE ERROR MESSAGE ONCE START TYPING
+userSearch.addEventListener('keyup', () => {
     noUserError.style.display = 'none';
     userSearch.style.border = 'solid 1px black';
 });
-userMessage.addEventListener('keyup', function() {
+userMessage.addEventListener('keyup', () => {
     noMessageError.style.display = 'none';
     userMessage.style.border = 'solid 1px black';
 });
-
-const submitButton = document.getElementById('submit-button');
- 
-submitButton.addEventListener('click', function(e) {
+// CHANGE THE BUTTON'S STYLE & TEXT 
+submitButton.addEventListener('click', (e) => {
     e.preventDefault();
     validation();
     if (validation() === true) {
@@ -71,27 +95,29 @@ submitButton.addEventListener('click', function(e) {
 
 // LOCAL STORAGE
 
-let checked = false;
 const emailSettingsToggle = document.getElementById('emailSettings');
 const profileSettingsToggle = document.getElementById('profileSettings');
 const timezoneSettingsToggle = document.getElementById('timezone');
 
 
+// GET VALUES FROM LOCAL STORAGE
+const emailsChecked = localStorage.getItem('emailSettingsChecked');
+emailSettingsToggle.checked = emailsChecked === 'true';
+
+const profileChecked = localStorage.getItem('profileSettingsChecked');
+profileSettingsToggle.checked = profileChecked === 'true';
+
+timezoneSettingsToggle.value = localStorage.getItem('timezoneSettingsValue');
+
+//ADD EVENT LISTENERS ON LOCAL STORAGE ITEMS
 emailSettingsToggle.addEventListener('change', (e) => {
     localStorage.setItem("emailSettingsChecked", e.target.checked);
 });
 
-const emailsChecked = localStorage.getItem('emailSettingsChecked');
-if (emailsChecked === 'true') {
-    checked = emailsChecked;
-    emailSettingsToggle.checked = true
-};
 profileSettingsToggle.addEventListener('change', (e) => {
     localStorage.setItem("profileSettingsChecked", e.target.checked);
 });
 
-const profileChecked = localStorage.getItem('profileSettingsChecked');
-if (profileChecked === 'true') {
-    checked = profileChecked;
-    profileSettingsToggle.checked = true
-};
+timezoneSettingsToggle.addEventListener('change', (e) => {
+    localStorage.setItem("timezoneSettingsValue", e.target.value);
+});

@@ -24,6 +24,13 @@ nav {
   background-color: rgb(67, 50, 141); 
   justify-content: center;
 }
+main {
+  grid-area: main;
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 50px;
+}
+/***** NAV BAR ICONS *****/
+/***********************************************************************/
 .icon {
   opacity: .5;
   padding: 10px;
@@ -32,6 +39,8 @@ nav {
 .icon:hover {
   opacity: 1;
 }
+/***** HEADER ELEMENTS *****/
+/***********************************************************************/
 #app-name {
   color: #fff;
   margin: auto;
@@ -43,8 +52,14 @@ nav {
   flex: 1;
   align-items: center;
 }
-/*BELL & DROPDOWN MENU*/
-/***********************************************************************/
+.avatar {
+  margin-right: 10px;
+}
+#header-info p {
+  color: #fff;
+  margin-right: 30px;
+}
+/* BELL & DROPDOWN MENU */
 @keyframes ring {
   0% { transform: rotate(0); }
   1% { transform: rotate(30deg); }
@@ -75,6 +90,13 @@ nav {
   animation: ring 4s .7s ease-in-out infinite;
   transform-origin: 50% 4px;
 }
+.bell {
+  height: 25px;
+  width: 25px;
+  margin-right: 40px;
+  position: relative;
+  display: inline-block;
+}
 .dropbtn .dot {
   height: 9px;
   width: 9px;
@@ -87,13 +109,6 @@ nav {
 }
 .dropbtn {
   cursor: pointer;
-}
-.bell {
-  height: 25px;
-  width: 25px;
-  margin-right: 40px;
-  position: relative;
-  display: inline-block;
 }
 .dropdown-content {
   display: none;
@@ -133,19 +148,8 @@ nav {
 .show {
   display:block;
 }
+/***** BOOKMARK & SEARCH FIELD *****/
 /***********************************************************************/
-.avatar {
-  margin-right: 10px;
-}
-#header-info p {
-  color: #fff;
-  margin-right: 30px;
-}
-main {
-  grid-area: main;
-  background-color: rgb(255, 255, 255);
-  padding-bottom: 100px;
-}
 .bookmark {
   display: flex;
   flex-wrap: wrap;
@@ -190,8 +194,8 @@ main {
   margin: 8px;
   width: 20px; 
 }
-
 /***** FLASHMESSAGE *****/
+/***********************************************************************/
 #flashMessage {
   color: #fff;
   background-color: rgb(17, 134, 243);
@@ -217,7 +221,12 @@ main {
   border: none;
   outline: 0;
 }
-/***** LINE CHART *****/
+/***** CHARTS *****/
+/***********************************************************************/
+.chart-container {
+  display: flex;
+  flex-wrap: wrap;
+  }
 h3 {
   text-transform: uppercase;
   text-align: center;
@@ -239,14 +248,10 @@ h3 {
   cursor: pointer;
 }
 .line-chart-labels label:hover,
-.line-chart-labels label:active {
+.active {
   color: #fff;
   background-color:	#7DCA91;
   border-radius: 15px;
-}
-.chart-container {
-display: flex;
-flex-wrap: wrap;
 }
 .line-chart,
 .bar-chart,
@@ -263,6 +268,8 @@ flex-wrap: wrap;
 .doughnut-chart {
   border-bottom: 0;
 }
+/***** SOCIAL STATS *****/
+/***********************************************************************/
 .social-stats-grid {
   display: grid;
   grid-gap: 10px;
@@ -294,9 +301,9 @@ flex-wrap: wrap;
 .stats-container h4 {
   margin-bottom: 0;
   color: rgb(17, 134, 243);
-
 }
 /***** MEMBERS AREA *****/
+/***********************************************************************/
 .members-area {
   display: flex;
   flex-wrap: wrap;
@@ -349,7 +356,6 @@ flex-wrap: wrap;
   top: 27px;
   right: 15px;
 }
-
 .right {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
@@ -360,6 +366,8 @@ flex-wrap: wrap;
   width: 90%;
   margin: 0 auto;
 }
+/***** FORM *****/
+/***********************************************************************/
 form p {
   margin-bottom: 0;
   margin-top: 0;
@@ -403,10 +411,8 @@ form button,
   background-color: rgb(17, 134, 243);
   border-radius: 5px;
 }
-
 /***** SETTINGS *****/
-
-/* The switch - the box around the slider */
+/***********************************************************************/
 .switch {
   position: relative;
   display: inline-block;
@@ -414,11 +420,9 @@ form button,
   height: 23px;
   margin-top: 15px;
 }
-
-/* Hide default HTML checkbox */
-.switch input {display:none;}
-
-/* The slider */
+.switch input {
+  display:none;
+}
 .slider {
   position: absolute;
   cursor: pointer;
@@ -430,7 +434,6 @@ form button,
   -webkit-transition: .4s;
   transition: .4s;
 }
-
 .slider:before {
   position: absolute;
   content: "";
@@ -452,22 +455,17 @@ form button,
 input:checked + .slider {
   background-color: #2196F3;
 }
-
 input:focus + .slider {
   box-shadow: 0 0 1px #2196F3;
 }
-
 input:checked + .slider:before {
   -webkit-transform: translateX(23px);
   -ms-transform: translateX(23px);
   transform: translateX(23px);
 }
-
-/* Rounded sliders */
 .slider.round {
   border-radius: 34px;
 }
-
 .slider.round:before {
   border-radius: 40%;
 }
@@ -504,8 +502,10 @@ input:checked + .slider:before {
 }
 .btn {
   cursor: pointer;
+  text-transform: uppercase;
 }
 /***** MEDIA QUERIES *****/
+/***********************************************************************/
 
 @media (min-width: 768px) {
   #container {
@@ -583,7 +583,6 @@ input:checked + .slider:before {
   .stats-container {
     padding: 0;
   }
-
 }
 @media (min-width: 1024px) {
 
@@ -597,17 +596,16 @@ input:checked + .slider:before {
   .bar-chart,
   .doughnut-chart {
      flex: 0 0 48%;
-   }
+  }
   .bar-chart {
     border-bottom: 0;
     padding-bottom: 0;
   }
- .doughnut-chart {
-   border-left: 1px solid grey;
-   padding-left: 10px;
-   padding-bottom: 0;
- }
- 
+  .doughnut-chart {
+    border-left: 1px solid grey;
+    padding-left: 10px;
+    padding-bottom: 0;
+  }
   .svg-container svg {
     height: 70px;
     width: 70px;
