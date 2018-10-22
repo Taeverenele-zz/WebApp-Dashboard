@@ -28,14 +28,14 @@ document.getElementById('close').addEventListener('click', () => {
 // LINE CHART LABELS
 const labelsBackground = document.getElementsByClassName('chart-labels');
 const removeActiveClass = () => {
-    for (var i = 0; i < labelsBackground.length; i++) {
+    for (let i = 0; i < labelsBackground.length; i++) {
         labelsBackground[i].classList.remove('active');
     }
 };
 
 // REMOVE ALL 'ACTIVE' CLASS NAMES
 // ADD 'ACTIVE' CLASS NAME TO ELEMENT WHEN CLICKED
-for( var i = 0; i < labelsBackground.length; i++) {
+for(let i = 0; i < labelsBackground.length; i++) {
     labelsBackground[i].addEventListener('click', (e) => {
         removeActiveClass();
         e.target.classList.add('active');
